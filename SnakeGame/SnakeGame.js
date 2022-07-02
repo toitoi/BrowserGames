@@ -2,6 +2,7 @@ let snake;
 let food;
 let rate = 10;
 let scl = 20;
+const growSize = 1;
 
 function setup() {
   createCanvas(windowWidth - 100, windowHeight - 100);
@@ -24,8 +25,8 @@ function draw() {
 
   if (snake.pos.equals(food.pos)) {
     food.location();
-    snake.eat();
-    rate += 1;
+    snake.eat(growSize);
+    rate += growSize;
   }
 }
 
@@ -39,6 +40,6 @@ function keyPressed() {
   } else if (keyCode === LEFT_ARROW || key === "h") {
     snake.dir(-1, 0);
   } else if (keyCode === ALT) {
-    snake.eat();
+    snake.eat(growSize);
   }
 }

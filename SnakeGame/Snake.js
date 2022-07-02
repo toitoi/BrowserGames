@@ -11,8 +11,8 @@ class Snake {
     this.vel.y = y * scl;
   }
 
-  eat() {
-    this.total += 1;
+  eat(size) {
+    this.total += size;
   }
 
   death() {
